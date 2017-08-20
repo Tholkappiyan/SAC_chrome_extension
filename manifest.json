@@ -1,0 +1,27 @@
+{
+  "name": "SAC Chrome Extension",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "SAC Chrome Extension",
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.google.co.in/*"],
+      "js": ["content_script.js"],
+      "css": ["content_script.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+    "https://*/*",
+    "http://*/*",
+    "tabs",
+    "geolocation",
+    "storage"
+  ]
+}
